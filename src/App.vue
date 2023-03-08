@@ -1,47 +1,122 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <v-app>
+    <v-content>
+      <router-view ></router-view>
+    </v-content>
+  </v-app>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script>
+export default {
+  name: "App",
+  components: {
+  },
+  data() {
+    return {
+      //
+    };
+  },
+  created() {},
+  methods: {},
+  mounted() {},
+};
+</script>
+
+<style lang="scss">
+@media (min-width: 576px) {
+  .form-card-size {
+    max-width: 5px;
+  }
+}
+@media (min-width: 768px) {
+  .form-card-size {
+    max-width: 60px;
+  }
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+@media (min-width: 992px) {
+  .form-card-size {
+    max-width: 120px;
+  }
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+@media (min-width: 1200px) {
+  .form-card-size {
+    max-width: 300px;
   }
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.v-list__group__header--sub-group .v-list__group__header__prepend-icon {
+  padding: 0 0 0 33px;
+  margin-right: 30px;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+.CSP_BoarderStyle {
+  border: 2px solid #b6b6b6;
+  border-radius: 30px;
+}
+
+.chessboard {
+  tbody {
+    tr:nth-of-type(odd) {
+      background-color: #ffe0b2;
+      td:nth-of-type(even) {
+        background-color: #fac16c;
+      }
+    }
+    tr:nth-of-type(even) {
+      background-color: #ffe0b2;
+      td:nth-of-type(odd) {
+        background-color: #fac16c;
+      }
+    }
   }
+}
+
+tbody {
+  tr:nth-of-type(odd) {
+    background-color: #e0f7fa;
+  }
+  tr:nth-of-type(even) {
+    background-color: #b2ebf2;
+  }
+}
+
+table.v-table tbody td {
+  font-size: 16px !important;
+  border: 1px solid black;
+}
+
+.theme--light.v-table thead th {
+  background-color: #0097a7;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  border: 1px solid black;
+}
+
+.rowStrip {
+  tbody {
+    tr:nth-of-type(odd) {
+      background-color: #ffe0b2;
+    }
+    tr:nth-of-type(even) {
+      background-color: #fac16c;
+    }
+  }
+}
+
+.colStrip {
+  tbody {
+    td:nth-of-type(odd) {
+      background-color: #ffe0b2;
+    }
+    td:nth-of-type(even) {
+      background-color: #fac16c;
+    }
+  }
+}
+
+.v-progress-linear {
+  height: 20px !important;
 }
 </style>
