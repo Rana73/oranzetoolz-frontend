@@ -1,6 +1,9 @@
-export const frontendBaseUrl = "http://localhost:8080";
-export const baseURL = "http://localhost:8000";
-
+//local
+// export const frontendBaseUrl = "http://localhost:8080";
+// export const baseURL = "http://127.0.0.1:8000";
+//server
+export const frontendBaseUrl = "https://orangetoolz-task.ntsoftwareltd.com";
+export const baseURL = "https://backend-task.ntsoftwareltd.com";
 export const API_URL = baseURL;
 export const API_END_POINT = API_URL + "/api/";
 // private api prefix

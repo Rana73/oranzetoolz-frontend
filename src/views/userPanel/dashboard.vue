@@ -148,4 +148,10 @@ marquee {
   font-size: 18px;
   margin:15px auto
 }
+@media(max-width:786px){
+  .title-class{
+  font-size: 9px;
+  margin:15px auto
+}
+}
 </style>
