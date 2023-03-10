@@ -10,7 +10,6 @@
                 <draggable class="list-group" tag="ul" v-model="pending" v-bind="dragOptions" :move="onMove" @start="isDragging=true" @end="isDragging=false" @change="updateTaskList">
                     <transition-group name="no" class="list-group" tag="ul">
                     <li class="list-group-item" v-for="element in pending" :key="element.id">
-                        <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
                         <div class="item-design"> <b class="title-design">{{element.name.slice(0, 15)}}</b><br>
                             <span class="badge"><b>Start Date :</b> {{element.start_date}}</span><br>
                             <span class="badge"><b>End Date :</b>{{element.end_date}}</span>
@@ -30,7 +29,6 @@
                 <draggable class="list-group" tag="ul" v-model="progress" v-bind="dragOptions" :move="onMove" @change="updateTaskList">
                     <transition-group name="no" class="list-group" tag="ul">
                     <li class="list-group-item" v-for="element in progress" :key="element.id">
-                        <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
                         <div class="item-design"> <b class="title-design">{{element.name.slice(0, 15)}}</b><br>
                             <span class="badge"><b>Start Date :</b> {{element.start_date}}</span><br>
                             <span class="badge"><b>End Date :</b>{{element.end_date}}</span>
@@ -49,7 +47,6 @@
                 <draggable class="list-group" tag="ul" v-model="testing" v-bind="dragOptions" :move="onMove" @change="updateTaskList">
                     <transition-group name="no" class="list-group" tag="ul">
                     <li class="list-group-item" v-for="element in testing" :key="element.id">
-                        <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
                         <div class="item-design"> <b class="title-design">{{element.name.slice(0, 15)}}</b><br>
                             <span class="badge"><b>Start Date :</b> {{element.start_date}}</span><br>
                             <span class="badge"><b>End Date :</b>{{element.end_date}}</span>
@@ -68,7 +65,6 @@
                 <draggable class="list-group" tag="ul" v-model="done" v-bind="dragOptions" :move="onMove" @change="updateTaskList">
                     <transition-group name="no" class="list-group" tag="ul">
                     <li class="list-group-item" v-for="element in done" :key="element.id">
-                        <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
                         <div class="item-design"> <b class="title-design">{{element.name.slice(0, 15)}}</b><br>
                             <span class="badge"><b>Start Date :</b> {{element.start_date}}</span><br>
                             <span class="badge"><b>End Date :</b>{{element.end_date}}</span>
@@ -146,7 +142,7 @@ import draggable from "vuedraggable";
       const relatedElement = relatedContext.element;
       const draggedElement = draggedContext.element;
       return (
-        (!relatedElement || !relatedElement.fixed) && !draggedElement.fixed
+        relatedElement
       );
     }
     },
