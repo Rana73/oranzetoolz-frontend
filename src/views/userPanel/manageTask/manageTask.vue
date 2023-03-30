@@ -27,7 +27,7 @@
           <div class="mx-2 my-2">
             <div class="text-center title">In Progress</div>
             <div class="drag-card">
-                <draggable class="list-group" tag="ul" v-model="progress" v-bind="dragOptions" :move="onMove" @start="isDragging=true" @end="isDragging=false" @change="updateTaskList">
+                <draggable class="list-group" tag="ul" v-model="progress" v-bind="dragOptions" :move="onMove" @change="updateTaskList">
                     <transition-group type="transition" :name="'flip-list'">
                     <li class="list-group-item" v-for="element in progress" :key="element.id">
                         <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
@@ -46,7 +46,7 @@
           <div class="mx-2 my-2">
             <div class="text-center title">Testing</div>
             <div class="drag-card">
-                <draggable class="list-group" tag="ul" v-model="testing" v-bind="dragOptions" :move="onMove" @start="isDragging=true" @end="isDragging=false" @change="updateTaskList">
+                <draggable class="list-group" tag="ul" v-model="testing" v-bind="dragOptions" :move="onMove" @change="updateTaskList">
                     <transition-group type="transition" :name="'flip-list'">
                     <li class="list-group-item" v-for="element in testing" :key="element.id">
                         <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
@@ -65,7 +65,7 @@
           <div class="mx-2 my-2">
             <div class="text-center title">Done</div>
             <div class="drag-card">
-                <draggable class="list-group" tag="ul" v-model="done" v-bind="dragOptions" :move="onMove" @start="isDragging=true" @end="isDragging=false" @change="updateTaskList">
+                <draggable class="list-group" tag="ul" v-model="done" v-bind="dragOptions" :move="onMove" @change="updateTaskList">
                     <transition-group type="transition" :name="'flip-list'">
                     <li class="list-group-item" v-for="element in done" :key="element.id">
                         <i :class="element.fixed? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'" @click=" element.fixed=! element.fixed" aria-hidden="true"></i>
